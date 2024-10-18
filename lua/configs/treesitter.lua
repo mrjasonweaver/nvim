@@ -4,6 +4,8 @@ local options = {
     "javascript",
     "typescript",
     "rust",
+    "rust-analyzer",
+    "codelldb",
     "css",
     "html",
     "lua",
