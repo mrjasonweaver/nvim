@@ -1,6 +1,7 @@
 local options = {
   ensure_installed = {
     "bash",
+    "node",
     "javascript",
     "typescript",
     "rust",
