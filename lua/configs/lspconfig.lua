@@ -23,6 +23,14 @@ for _, lsp in ipairs(default_servers) do
   })
 end
 
+lspconfig.ts_ls.setup({
+  settings = {
+    preferences = {
+      quotePreference = "single",
+    },
+  },
+})
+
 lspconfig.lua_ls.setup({
   on_attach = on_attach,
   on_init = on_init,
