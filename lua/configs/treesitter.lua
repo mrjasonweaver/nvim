@@ -3,7 +3,6 @@ local options = {
     "bash",
     "javascript",
     "typescript",
-    "prettierd",
     "rust",
     "css",
     "html",
