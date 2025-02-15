@@ -17,8 +17,6 @@ M.ui = {
     },
   },
 
-  telescope = { style = "bordered" }, -- borderless / bordered
-
   statusline = {
     theme = "default", -- default/vscode/vscode_colored/minimal
     -- default/round/block/arrow separators work only for default statusline theme
