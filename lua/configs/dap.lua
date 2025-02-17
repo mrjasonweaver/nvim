@@ -7,12 +7,24 @@ local js_langs = {
   "javascriptreact",
 }
 -- Javascript configurations.
-dap.adapters["pwa-node"] = {
+-- dap.adapters["pwa-node"] = {
+--   type = "server",
+--   host = "localhost",
+--   port = 3000,
+--   executable = {
+--     command = "js-debug-adapter",
+--   },
+-- }
+dap.adapters["pwa-chrome"] = {
   type = "server",
   host = "localhost",
-  port = 3000,
+  port = "${port}",
   executable = {
-    command = "js-debug-adapter",
+    command = "node",
+    args = {
+      require("mason-registry").get_package("js-debug-adapter"):get_install_path() .. "/js-debug/src/dapDebugServer.js",
+      "${port}",
+    },
   },
 }
 for _, langauge in ipairs(js_langs) do
@@ -24,6 +36,13 @@ for _, langauge in ipairs(js_langs) do
       program = "${file}",
       cwd = "${WorkspaceFolder}",
       runtimeExecutable = "node",
+    },
+    {
+      type = "pwa-chrome",
+      request = "launch",
+      name = "Launch Chrome",
+      url = "http://localhost",
+      sourceMaps = true,
     },
   }
 end
