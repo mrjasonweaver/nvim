@@ -9,14 +9,14 @@ local js_langs = {
 -- Javascript configurations.
 dap.adapters["pwa-node"] = {
   type = "server",
-  host = "127.0.0.1",
-  port = 8123,
+  host = "localhost",
+  port = 3000,
   executable = {
     command = "js-debug-adapter",
   },
 }
 for _, langauge in ipairs(js_langs) do
-  dap.configuration[langauge] = {
+  dap.configurations[langauge] = {
     {
       type = "pwa-node",
       request = "launch",

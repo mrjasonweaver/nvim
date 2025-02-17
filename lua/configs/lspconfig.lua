@@ -4,17 +4,15 @@ local capabilities = require("nvchad.configs.lspconfig").capabilities
 
 local lspconfig = require("lspconfig")
 
--- list of all servers configured.
-lspconfig.servers = {
-  "lua_ls",
-  "ts_ls",
-}
-
 -- list of servers configured with default config.
 local default_servers = {
   "ts_ls",
   "lua_ls",
+  "rust_analyzer",
 }
+
+-- list of all servers configured.
+lspconfig.servers = default_servers
 
 -- lsps with default config
 for _, lsp in ipairs(default_servers) do
@@ -34,10 +32,6 @@ lspconfig.ts_ls.setup({
 })
 
 lspconfig.lua_ls.setup({
-  on_attach = on_attach,
-  on_init = on_init,
-  capabilities = capabilities,
-
   settings = {
     Lua = {
       diagnostics = {
