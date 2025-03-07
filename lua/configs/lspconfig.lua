@@ -9,6 +9,7 @@ local default_servers = {
   "ts_ls",
   "lua_ls",
   "rust_analyzer",
+  "clangd",
 }
 
 -- list of all servers configured.
