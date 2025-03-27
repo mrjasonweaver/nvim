@@ -6,7 +6,7 @@
 local M = {}
 
 M.base46 = {
-  theme = "rosepine",
+  theme = "chadracula-evondev",
 }
 M.ui = {
   cmp = {
@@ -16,7 +16,7 @@ M.ui = {
       tailwind = false,
     },
   },
-
+  view = { adaptive_size = true },
   statusline = {
     theme = "default", -- default/vscode/vscode_colored/minimal
     -- default/round/block/arrow separators work only for default statusline theme
